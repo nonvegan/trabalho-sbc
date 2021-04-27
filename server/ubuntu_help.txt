@@ -1,0 +1,14 @@
+screen -S "Flask"
+cd server
+python3 app.py
+Ctrl-A-D
+
+screen -S "Ngrok"
+ngrok http 5000
+Ctrl-A-D
+
+
+https://www.twilio.com/console/sms/whatsapp/sandbox -> past link
+
+screen -R session_name
+screen -S session_name -X quit

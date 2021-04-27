@@ -1,8 +1,8 @@
 starting_state = {
-    "new": False,
-    "doing_questions": True,
-    "idade": 20,
-    "genero": "Feminino",
+    "new": True,
+    "doing_questions": False,
+    "idade": 0,
+    "genero": "",
     "tipo_alimentacao": "",
     "tipo_comida": "",
     "preco": 0,

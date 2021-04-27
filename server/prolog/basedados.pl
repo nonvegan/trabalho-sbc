@@ -79,7 +79,7 @@ prato('perfil38',[['Massa Campania','https://saborclub.uol.com.br/media/_version
 
 prato('perfil39',[['Risotto di Verdure','https://wips.plug.it/cips/buonissimo.org/cms/2012/12/risotto-verdure.jpg']]).
 
-prato('perfil40',[['HambÃºrgeres de Frango a Italiana sem Gluten','https://saboreiaavida.nestle.pt/sites/default/files/styles/receita_card_620x560/public/pictures/cb17954a-f557-11e7-9fd0-d4ae52b7884c.jpeg?itok=qum48Z8d']]).
+prato('perfil40',[['Hamburgeres de Frango a Italiana sem Gluten','https://saboreiaavida.nestle.pt/sites/default/files/styles/receita_card_620x560/public/pictures/cb17954a-f557-11e7-9fd0-d4ae52b7884c.jpeg?itok=qum48Z8d']]).
 
 prato('perfil41',[['Vaca com Chop Suey e Arroz','http://4.bp.blogspot.com/-CXhIg868fGw/U7NGHA1KC-I/AAAAAAAACaE/fqEX7ojXbEU/s1600/Chop+Suey+Vaca.jpg']]).
 

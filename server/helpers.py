@@ -46,4 +46,9 @@ def send_pratos(body, media_urls):
                 media_url=media_urls[i]
             )
     except:
-        print("Erro ao mandar mensagem")
+        print("Erro ao mandar mensagem com pratos")
+        client.messages.create(
+            to=config["PHONE"],
+            from_=config["TWILIO_PHONE"],
+            body="Erro no envio da mensagem"
+        )

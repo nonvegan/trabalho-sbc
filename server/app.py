@@ -12,6 +12,14 @@ def resState():
     return state
 
 
+@app.route("/status", methods=['POST'])
+def incoming_sms():
+    if request.values.get('MessageStatus', None) == "failed":
+        send_pratos("Ocorreu um erro ao mandar a sua mensagem", [])
+        print("Erro ao enviar mensagem, failed status")
+    return ('', 204)
+
+
 @app.route("/dish")
 def resDish():
     pratos = consult_pratos(state["idade"], state["tipo_alimentacao"], state["tipo_comida"], state["preco"])

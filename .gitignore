@@ -2,3 +2,7 @@
 __pycache__/
 venv/
 .env
+pratos_env
+.Rproj.user
+.RData
+.Rhistory

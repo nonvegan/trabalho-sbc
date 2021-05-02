@@ -1,0 +1,41 @@
+idade,genero,tipo_alimentacao,tipo_comida,preco_maximo,fatores,prato_favorito,tipo_refeicao
+maior18,Masculino,Normal,Italiana,mais10,"Variedade, Preço, Qualidade, Quantidade",Massa,Prato principal
+maior18,Masculino,Normal,FastFood,mais10,"Preço, Qualidade, Quantidade",Big Mac,Prato principal
+maior18,Masculino,Normal,Tradiciconal,menos10,Preço,Rojoes ,Prato principal
+maior18,Masculino,Normal,Tradiciconal,menos10,Preço,Rojoes ,Entradas
+maior18,Feminino,Normal,Tradiciconal,menos10,"Variedade, Preço, Qualidade, Quantidade, Tempo de entrega",Arroz de Pato,Prato principal
+maior18,Feminino,Normal,Tradiciconal,menos10,"Variedade, Preço, Qualidade, Quantidade, Tempo de entrega",Bife a parmagiana,Prato principal
+maior18,Feminino,Normal,Tradiciconal,mais10,"Preço, Qualidade, Quantidade, Tempo de entrega",Sushi,Prato principal
+maior18,Feminino,Normal,Tradiciconal,menos10,"Preço, Qualidade, Quantidade",Massa a bolonhesa ,Prato principal
+maior18,Feminino,Normal,Tradiciconal,mais10,"Preço, Qualidade, Tempo de entrega",Bifes de frango com molho de champignon,Prato principal
+maior18,Feminino,Normal,Tradiciconal,mais10,Qualidade,Bacalhau ,Prato principal
+maior18,Feminino,Normal,Tradiciconal,menos10,"Preço, Qualidade, Quantidade",Lasanha,Prato principal
+maior18,Feminino,Normal,Tradiciconal,mais10,"Variedade, Preço, Qualidade, Quantidade",Vitela assada ,Prato principal
+maior18,Feminino,Normal,Tradiciconal,menos10,Qualidade,Lasanha ,Prato principal
+maior18,Feminino,Normal,Tradiciconal,mais10,"Preço, Qualidade, Quantidade",Picanha,Prato principal
+maior18,Feminino,Normal,Tradiciconal,menos10,Qualidade,Salada russa,Prato principal
+maior18,Feminino,Normal,FastFood,menos10,Tempo de entrega,Amburguer,Prato principal
+maior18,Masculino,Vegan,Italiana,mais10,Quantidade,Macarrao vegano,"Prato principal, Saladas"
+maior18,Masculino,Vegetariana,Tailandesa,menos10,Preço,Sanduiche de bringela e tomata,Sandes
+maior18,Feminino,Vegetariana,Chinesa,mais10,Qualidade,Pin em japA,"Entradas, Prato principal"
+maior18,Masculino,Vegetariana,Chinesa,mais10,"Preço, Tempo de entrega",Suchi,"Entradas, Prato principal, Saladas"
+menor18,Masculino,Gluten Free,FastFood,menos10,"Preço, Qualidade",Pizza,"Prato principal, Sobremesa"
+maior18,Feminino,Normal,Tailandesa,mais10,"Preço, Qualidade",Frango ao molho tikka massala,"Entradas, Prato principal"
+maior18,Feminino,Vegetariana,Indiana,mais10,"Variedade, Preço, Qualidade",Arroz pulao,"Entradas, Prato principal, Saladas, Sobremesa"
+maior18,Masculino,Vegetariana,Indiana,mais10,"Variedade, Preço, Qualidade",Couve flor indiana,"Prato principal, Saladas"
+maior18,Feminino,Normal,Brasileira,mais10,"Variedade, Preço, Qualidade",Picanha,"Entradas, Prato principal, Saladas, Sobremesa"
+menor18,Feminino,Normal,FastFood,mais10,"Preço, Qualidade",Francesinha sem gluten,Prato principal
+menor18,Masculino,Vegetariana,Japonesa,mais10,"Preço, Qualidade",Sushi salmao,"Entradas, Prato principal, Saladas"
+maior18,Masculino,Vegetariana,Japonesa,mais10,Qualidade,Kare,Prato principal
+maior18,Masculino,Vegetariana,Italiana,mais10,"Preço, Qualidade",Massa carbonara vegetariana,"Prato principal, Saladas"
+maior18,Feminino,Vegan,Brasileira,mais10,Variedade,Dobradinha de linguiça  vegana,"Prato principal, Saladas"
+maior18,Masculino,Vegetariana,Brasileira,mais10,Variedade,Feijoada de tofu,"Prato principal, Saladas"
+maior18,Masculino,Vegetariana,Brasileira,mais10,Qualidade,Moqueca de cogumelos,"Prato principal, Sobremesa"
+maior18,Feminino,Normal,Tailandesa,mais10,"Preço, Qualidade",Pad thai,"Entradas, Prato principal"
+maior18,Masculino,Gluten Free,Tailandesa,mais10,"Preço, Qualidade",Frango na abacaxi tailandes,"Prato principal, Sobremesa"
+maior18,Feminino,Vegetariana,Tailandesa,menos10,"Preço, Qualidade",Macarrao de arroz tailandes,"Prato principal, Sobremesa"
+maior18,Feminino,Vegetariana,Tailandesa,menos10,"Preço, Qualidade",Salada de mamao tailandes,"Entradas, Saladas"
+menor18,Masculino,Vegan,FastFood,mais10,"Preço, Qualidade",Pizza vegan,Prato principal
+maior18,Feminino,Vegetariana,Brasileira,menos10,"Preço, Qualidade",Salada de bifum,Saladas
+maior18,Masculino,Normal,Tradicional,mais10,"Variedade, Preço",Feijoada a transmontana,Prato principal
+maior18,Masculino,Gluten Free,Tailandesa,mais10,"Preço, Qualidade",Frango a tailandesa,Prato principal

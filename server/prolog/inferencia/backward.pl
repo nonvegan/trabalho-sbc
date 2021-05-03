@@ -1,4 +1,5 @@
 % A simple backward chaining rule interpreter
+
 :-  op( 800, fx, if).
 :-  op( 700, xfx, then).
 :-  op( 300, xfy, or).

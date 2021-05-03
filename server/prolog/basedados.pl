@@ -1,5 +1,4 @@
 :- dynamic(fact/1).
-:- [backward,forward].
 
 prato('perfil1',[['Pica no chao','https://www.altominho.tv/site/wp-content/uploads/2018/10/pica-no-ch%C3%A3o.jpg'],['Bitoque a portuguesa','https://1.bp.blogspot.com/-kwvLrIAe3ZE/XSRZuiFalfI/AAAAAAAAk6w/uin11aEf1aAWl7154Vf4QV9E4Jbq1-ktACLcBGAs/s1600/1481978106_homestyle-restaurantes-em-lisboa.jpg']]).
 
@@ -128,11 +127,3 @@ prato('perfil62',[['Hamburger Veggie','https://sifu.unileversolutions.com/image/
 prato('perfil63',[['Acai de fruta tropical','https://d1ralsognjng37.cloudfront.net/6dcf8c57-d79a-4938-a215-ce12496e97f0.jpeg']]).
 
 prato('perfil64',[['Cuscuz nordestino','https://cdn.panelinha.com.br/receita/1543940915947-cuscuz%20de%20milho%20%281%29.jpg%27']]).
-
-
-
-
-
-
-
-

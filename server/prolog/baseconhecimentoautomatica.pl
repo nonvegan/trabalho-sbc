@@ -1,6 +1,5 @@
 :- dynamic(fact/1).
-:- [backward,forward,proof,basedados].
-
+:- [basedados,inferencia/sistemainferencia].
 
 if 'Brasileira' and 'menos10' then 'Salada de bifum'.
 if 'FastFood' and 'maior18' and 'Masculino' then 'Big Mac'.
@@ -22,18 +21,3 @@ if 'Vegan' then 'Pizza vegan'.
 if 'menor18' then 'Pizza'.
 fact(true).
 if true then 'Picanha'.
-
-res(Y):- fact(X).
-res(_).
-
-pratos(Y):- demo, findall(Y,res(Y),L1), list_to_set(L1,P).
-
-
-
-
-
-
-
-
-
-

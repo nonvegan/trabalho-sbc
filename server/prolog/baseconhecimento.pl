@@ -1,5 +1,5 @@
 :- dynamic(fact/1).
-:- [backward,forward,proof,basedados].
+:- [basedados,inferencia/sistemainferencia].
 
 if 'maior18' and 'Normal' and 'Tradicional' and 'menos10'  then 'perfil1'.
 if 'maior18' and 'Vegan' and 'Tradicional' and 'menos10'  then 'perfil2'.
@@ -65,18 +65,3 @@ if 'maior18' and 'Normal' and 'Brasileira' and 'mais10'  then 'perfil61'.
 if 'maior18' and 'Vegan' and 'Brasileira' and 'mais10'  then 'perfil62'.
 if 'maior18' and 'Vegetariana' and 'Brasileira' and 'mais10'  then 'perfil63'.
 if 'maior18' and 'GlutenFree' and 'Brasileira' and 'mais10'  then 'perfil64'.
-
-res(Y):- fact(X), prato(X,Y).
-res(_).
-
-pratos(P):- demo, findall(Y,res(Y),L1), list_to_set(L1,P).
-
-
-
-
-
-
-
-
-
-

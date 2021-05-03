@@ -127,3 +127,7 @@ prato('perfil62',[['Hamburger Veggie','https://sifu.unileversolutions.com/image/
 prato('perfil63',[['Acai de fruta tropical','https://d1ralsognjng37.cloudfront.net/6dcf8c57-d79a-4938-a215-ce12496e97f0.jpeg']]).
 
 prato('perfil64',[['Cuscuz nordestino','https://cdn.panelinha.com.br/receita/1543940915947-cuscuz%20de%20milho%20%281%29.jpg%27']]).
+
+prato('refeicao1',[['Refeicao Automatica 1','https://www.cambridgeenglish.org/br/Images/tye-general-english-circle.jpg']]).
+
+prato('refeicao2',[['Refeicao Automatica 2','https://www.cambridgeenglish.org/br/Images/tye-general-english-circle.jpg']]).

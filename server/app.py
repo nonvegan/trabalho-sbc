@@ -22,7 +22,9 @@ def incoming_sms():
 
 @app.route("/dish")
 def resDish():
-    pratos = consult_pratos(state["idade"], state["tipo_alimentacao"], state["tipo_comida"], state["preco"])
+    pratos = consult_pratos(state["inferencia"], state["genero"], state["idade"], state["tipo_alimentacao"],
+                            state["tipo_comida"],
+                            state["preco"])
     return {
         "pratos": pratos} if pratos else {
         "status": "error",
@@ -39,9 +41,17 @@ def sms_reply():
         state["new"] = False
         state["doing_questions"] = True
         resp.message("Muito bem. Vamos começar o nosso questionário rápido. Qual a sua idade?")
+    elif "!manual" in msg:
+        state["new"] = False
+        state["inferencia"] = "manual"
+        resp.message("O sistema está neste momento a usar conhecimento adquirido de forma manual.")
+    elif "!automatica" in msg:
+        state["new"] = False
+        state["inferencia"] = "automatica"
+        resp.message("O sistema está neste momento a usar conhecimento adquirido de forma automática.")
     elif state["new"]:
         state["new"] = False
-        resp.message("Olá, seja bem vindo ao nosso motor de sugestões. "
+        resp.message("Olá, seja bem vindo ao nosso SBC de sugestões de pratos. "
                      "Primeiramente iremos recolher algumas informações sobre si. Escreva *!dish* para começar")
     elif state["doing_questions"]:
         if not state["idade"]:
@@ -89,7 +99,9 @@ def sms_reply():
                     raise Exception("bad_data")
                 state["preco"] = preco
                 state["doing_questions"] = False
-                pratos = consult_pratos(state["idade"], state["tipo_alimentacao"], state["tipo_comida"], state["preco"])
+                pratos = consult_pratos(state["inferencia"], state["genero"], state["idade"], state["tipo_alimentacao"],
+                                        state["tipo_comida"],
+                                        state["preco"])
                 if (pratos):
                     output = "Muito obrigado pelas suas respostas. Os pratos que aconselhamos são os seguintes:\n"
                     media_urls = []
@@ -101,10 +113,14 @@ def sms_reply():
                         elif i == (len(pratos) - 1):
                             separator = "."
                         output += "*{}*{}\n".format(pratos[i]["nome"], separator)
+                    output += "\nA nossa recomendação foi gerada apartir de uma base de conhecimento adquirida de forma *!{}*. Se quiser, pode usar a nossa *!{}*.".format(
+                        state["inferencia"], "automatica" if state["inferencia"] == "manual" else "manual")
                     send_pratos(output, media_urls)
                 else:
                     resp.message(
-                        "Lamentamos mas não encontramos nenhum prato que se enquadre com as suas preferências.")
+                        "Lamentamos mas não encontramos nenhum prato que se enquadre com as suas preferências." + "\nA nossa recomendação foi gerada apartir de uma base de conhecimento adquirida de forma *!{}*. Se quiser, pode usar a nossa *!{}*.".format(
+                            state["inferencia"], "automatica" if state["inferencia"] == "manual" else "manual")
+                    )
             except:
                 resp.message("Porfavor introduza uma preço válido...")
     else:

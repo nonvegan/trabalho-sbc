@@ -1,6 +1,7 @@
 starting_state = {
     "new": True,
     "doing_questions": False,
+    "inferencia": "manual",
     "idade": 0,
     "genero": "",
     "tipo_alimentacao": "",

@@ -1,6 +1,6 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-from prolog.intrepertador_prolog import consult_pratos
+from intrepertador_prolog import consult_pratos
 from data import starting_state as state, tipos_alimentacao, tipos_comida
 from helpers import resetSateData, get_value_list_strings, index_and_format_list, send_pratos
 

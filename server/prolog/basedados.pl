@@ -104,7 +104,7 @@ prato('perfil51',[['Garlic paneer tikka','https://www.indianhealthyrecipes.com/w
 
 prato('perfil52',[['Pakora de cebola','https://st4.depositphotos.com/5653638/39112/i/1600/depositphotos_391121886-stock-photo-fried-onion-pakora-pyaj-pakoda.jpg']]).
 
-prato('perfil53',[['Sushi e Sashimi 16 peças','https://www.nit.pt/wp-content/uploads/2016/10/5f786514-b454-44ba-a2e9-917eb3fa39f6-754x394.jpg']]).
+prato('perfil53',[['Sushi e Sashimi 16 pecas','https://www.nit.pt/wp-content/uploads/2016/10/5f786514-b454-44ba-a2e9-917eb3fa39f6-754x394.jpg']]).
 
 prato('perfil54',[['Sushi de manga, coco e limao','http://s2.glbimg.com/Di1U1uPWOiN4lcbXmBVfGJmKoFZ9DL9tWi127UYQ1aVIoz-HdGixxa_8qOZvMp3w/e.glbimg.com/og/ed/f/original/2014/03/13/cc_manga_03_pequena.jpg-2.jpg']]).
 
@@ -128,6 +128,43 @@ prato('perfil63',[['Acai de fruta tropical','https://d1ralsognjng37.cloudfront.n
 
 prato('perfil64',[['Cuscuz nordestino','https://cdn.panelinha.com.br/receita/1543940915947-cuscuz%20de%20milho%20%281%29.jpg%27']]).
 
-prato('refeicao1',[['Refeicao Automatica 1','https://www.cambridgeenglish.org/br/Images/tye-general-english-circle.jpg']]).
 
-prato('refeicao2',[['Refeicao Automatica 2','https://www.cambridgeenglish.org/br/Images/tye-general-english-circle.jpg']]).
+prato('refeicao1',[['Salada de Bifum','https://i.pinimg.com/736x/a4/6e/80/a46e80fda122bf8993ff8a3298f2e435.jpg']]).
+
+prato('refeicao2',[['Big Mac','https://super.abril.com.br/wp-content/uploads/2017/03/bigmac.png']]).
+
+prato('refeicao3',[['Kare Raisu','https://t2.rg.ltmcdn.com/pt/images/1/0/3/receita_de_kare_raisu_japones_6301_600.jpg']]).
+
+prato('refeicao4',[['Arroz Pulao','https://popatstore.pt/img/cms/pulao.jpg']]).
+
+prato('refeicao5',[['Hamburguer','https://img.itdg.com.br/tdg/images/blog/uploads/2020/05/shutterstock_1710468256.jpg']]).
+
+prato('refeicao6',[['Massa Carbonara Vegetariana','http://2.bp.blogspot.com/-nFzwugQu6EY/Tyw0J0p-qyI/AAAAAAAAAJk/PRH7PpP-_js/s1600/IMG_0506.JPG']]).
+
+prato('refeicao7',[['Pin em Japa','https://i.pinimg.com/564x/21/fa/31/21fa31774a1b6e8307f7be74a7592e5c.jpg']]).
+
+prato('refeicao8',[['Macarrao Vegano','https://www.receitasagora.com.br/wp-content/uploads/2020/05/receita-macarrao-vegano-scaled.jpg']]).
+
+prato('refeicao9',[['Massa','https://img.itdg.com.br/tdg/images/blog/uploads/2017/03/shutterstock_135625958.jpg']]).
+
+prato('refeicao10',[['Feijoada a Transmontana','https://www.receitasemenus.net/wp-content/uploads/2019/02/feijoada-transmontana-minha-moda.jpg']]).
+
+prato('refeicao11',[['Sushi','https://exame.com/wp-content/uploads/2017/05/sushi.jpg?quality=70&strip=info']]).
+
+prato('refeicao12',[['Couve Flor Indiana','https://www.lovemysalad.com/sites/default/files/styles/home_carousel_item_768/public/rznl150824_008_lms_recipe_spicy_cauliflower.jpg?itok=cjTzsYB6']]).
+
+prato('refeicao13',[['Dobradinha de Linguica Vegana','https://s2.glbimg.com/8EJ45fW2ratGuY2BCzMEOpMo0hE=/0x0:2560x1920/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2015/10/18/20_54_15_457_Dobradinha.jpg']]).
+
+prato('refeicao14',[['Francesinha sem Gluten','https://www.nit.pt/wp-content/uploads/2021/01/94b9b1318fc8141b6ee22903c9474174.jpg']]).
+
+prato('refeicao15',[['Sanduiche de Beringela e Tomate','https://s2.glbimg.com/o9H_VhtCNPr3ldZqeGecD4OY6Ss=/e.glbimg.com/og/ed/f/original/2020/09/16/receita-sanduiche.png']]).
+
+prato('refeicao16',[['Sushi Salmao','https://jbchost.com.br/ht/wp-content/uploads/2017/10/sushipreparado.jpg']]).
+
+prato('refeicao17',[['Pizza Vegan','https://veganandcolors.com/wp-content/uploads/2019/09/F1-750x750.jpg']]).
+
+prato('refeicao18',[['Pizza','https://www.alegrafoods.com.br/wp-content/uploads/2020/07/9-img-blog.png']]).
+
+prato('refeicao19',[['Rojoes','https://cdn.e-konomista.pt/uploads/2021/02/rojoes-.jpg']]).
+
+prato('refeicao20',[['Picanha','https://tastebraga.com/wp-content/uploads/2017/07/Caldo-Entornado_prato.jpg']]).

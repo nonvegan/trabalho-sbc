@@ -1,0 +1,155 @@
+    :root {
+        --fuchsia: #f92672;
+        --light-violet: #ae81ff;
+        --bunker: #21252b;
+        --ebony: #282c34;
+        --atomic-tangerine: #FC9867;
+        --dandelion: #FFD866;
+        --feijoa: #A9DC76;
+        --turquoise-blue: #78dce8;
+    }
+
+    .swal2-popup {
+        background-color: #21252b !important;
+        border-radius: 0.3rem !important;
+    }
+
+    .swal2-input {
+        background-color: #282c34 !important;
+        border: 0.3rem solid white !important;
+        border-radius: 0.3rem !important;
+    }
+
+    .swal2-input:hover{
+        border-color: #ae81ff !important;
+    }
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #21252b;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h1 span {
+        color: #ae81ff
+    }
+
+    canvas {
+        background-color: #282c34;
+        border: 0.3rem solid #ae81ff;
+        border-radius: 0.5rem;
+    }
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem
+    }
+
+    label.switch {
+        margin-left: 0.5vw;
+    }
+
+    label {
+        font-size: 2rem;
+        margin-top: 1.5vh;
+        margin-right: 0vw;;
+        margin-left: 1.5vw;
+    }
+
+    input,
+    button,
+    select {
+        width: 12rem;
+        height: 3rem;
+        background-color: inherit;
+        color: inherit;
+        margin-right: 0vw;
+        margin-left: 1.5vw;
+        margin-top: 1.5vh;
+        border: 0.3rem solid white;
+        border-radius: .75rem;
+        font-size: 1.25rem;
+    }
+
+    select{
+        width: 15rem
+    }
+
+
+
+    option,
+    option div {
+        background-color: #ae81ff;
+        border: 0.3rem solid white;
+    }
+
+    input {
+        appearance: none;
+        height: 2.3rem;
+    }
+
+    button:hover,
+    input:hover,
+    select:hover,
+    .slider:hover {
+        border-color: #ae81ff;
+        cursor: pointer;
+    }
+
+    button:hover span {
+        color: #ae81ff;
+    }
+
+    .switch {
+        position: relative;
+        width: 6rem;
+        height: 3rem;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 0.3rem solid white;
+        border-radius: 1.5rem;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.7rem;
+        width: 1.7rem;
+        left: 0.4rem;
+        top: 0.4rem;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    input:checked+.slider {
+        background-color: #f92672;
+    }
+
+
+    input:checked+.slider:before {
+        transform: translateX(3rem);
+    }

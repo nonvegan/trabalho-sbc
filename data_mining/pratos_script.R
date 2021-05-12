@@ -37,4 +37,3 @@ writeLines(paste(sep="","else ","'",substring(ultima_regra,20,nchar(ultima_regra
 sink()
 
 shell("regras.txt")
-

@@ -1,26 +1,29 @@
-import { getMousePosElem } from "./helpers.js";
+import { assertz, retractall, consult, consultFile, query } from "./intrepertador_prolog.js";
 import { Vector, Entidade } from "./classes.js";
+import { getMousePosElem } from "./helpers.js";
 import { startingMap, links } from "./data.js";
 
-const canvas = document.getElementById("canvas");
-/** @type {CanvasRenderingContext2D} */ const ctx = canvas.getContext("2d");
-
 const metodoProcuraList = document.getElementById("metodoProcuraList");
+const depthfirstOption = metodoProcuraList.firstElementChild;
 const resetButton = document.getElementById("resetButton");
 const procuraButton = document.getElementById("procuraButton");
-const switchInput = document.getElementById("switchInput");
-const width = Math.min(window.innerWidth, window.innerHeight) * 1.2;
-const height = Math.min(window.innerWidth, window.innerHeight) / 1.5;
+const switchInputDistancia = document.getElementById("switchInputDistancia");
+const switchInputObjetivo = document.getElementById("switchInputObjetivo");
+const labelObjetivo = document.getElementById("labelObjetivo");
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
 
-const session = pl.create();
-
+const width = 1400;
+const height = 800;
 Entidade.size = width / 50;
+
 let entidades = startingMap(width, height);
-let currentSelectedKey, currentSolution;
+let currentSelectedKeys = new Set();
+let currentSolution;
 
 document.addEventListener("keydown", (evt) => {
   if (evt.key === "f") {
-    console.log(currentSelectedKey, currentSolution);
+    console.log(currentSelectedKeys, currentSolution);
   }
 });
 
@@ -33,43 +36,34 @@ function setup() {
   ctx.textBaseline = "middle";
   ctx.lineWidth = 3;
 
-  session.consult(":-use_module(library(lists)).");
-  session.consult("../prolog/breadthfirst.pl");
-  session.consult("../prolog/depthfirst.pl");
-  session.consult("../prolog/search.pl");
-  session.consult("../prolog/norte.pl");
+  const session = pl.create();
+  consult(":-use_module(library(lists)).", session);
+  consultFile("../prolog/procura/breadthfirst.pl", session);
+  consultFile("../prolog/procura/depthfirst.pl", session);
+  consultFile("../prolog/procura/search.pl", session);
+  consultFile("../prolog/procura/estafeta.pl", session);
 
   procuraButton.addEventListener("click", (evt) => {
+    procuraButton.disabled = true;
     const t0 = performance.now();
-    if (entidades.has(currentSelectedKey)) {
-      session.query(`retractall(road(_,_,_)).`);
-      session.answer();
+    if (currentSelectedKeys.size > 0) {
+      retractall("initial(_)", session);
+      retractall("goal(_)", session);
+      retractall("road(_,_,_)", session);
+      retractall("s(_,_)", session);
+      retractall("lucro(_,_)", session);
+
       for (const link of links) {
-        session.query(`assertz(road(${link.a},${link.b},${!switchInput.checked ? link.weight : parseFloat(entidades.get(link.a).pos.distance(entidades.get(link.b).pos) / 100).toFixed(1)})).`);
-        session.answer();
-        session.query(`assertz(road(${link.b},${link.a},${!switchInput.checked ? link.weight : parseFloat(entidades.get(link.a).pos.distance(entidades.get(link.b).pos) / 100).toFixed(1)})).`);
-        session.answer();
+        assertz(`road(${link.a},${link.b},${!switchInputDistancia.checked ? link.weight : parseFloat(entidades.get(link.a).pos.distance(entidades.get(link.b).pos) / 100).toFixed(1)})`, session);
       }
 
-      session.query(`retractall(goal(_)).`);
-      session.answer();
-      session.query(`retractall(lucro(_,_)).`);
-      session.answer();
-
-      session.query(`assertz(goal(${currentSelectedKey})).`);
-      session.answer();
-      session.query(`assertz(lucro(${currentSelectedKey},${entidades.get(currentSelectedKey).lucro})).`);
-      session.answer();
-
-      session.query(`search(${metodoProcuraList.value},Par,S),length(S,N),N1 is N-1,eval(S,D), D1 is D + 1,lucro(${currentSelectedKey},L).`);
-      session.answer({
-        error: function (err) {
-          console.log(err);
-        },
-        fail: function (err) {
-          console.log(false);
-        },
-        success: function (answer) {
+      if (currentSelectedKeys.size == 1 && !switchInputObjetivo.checked) {
+        const encomenda = entidades.get(currentSelectedKeys.values().next().value);
+        assertz("initial(restaurante)", session);
+        assertz("(s(N1,N2):- travel(N1,N2,_))", session);
+        assertz(`goal(${encomenda.nome})`, session);
+        assertz(`lucro(${encomenda.nome},${encomenda.lucro})`, session);
+        query(`search(${metodoProcuraList.value},Par,S),length(S,N),N1 is N-1,eval(S,D), D1 is D + 1,lucro(${encomenda.nome},L).`, session, function (answer) {
           currentSolution = {
             path: answer
               .lookup("S")
@@ -81,22 +75,60 @@ function setup() {
             profit: answer.lookup("L").value,
             running_time: performance.now() - t0,
           };
-          let x = currentSolution.path.slice();
+          let solutionCopy = currentSolution.path.slice();
           for (const link of links) {
             link.inSolution = false;
           }
-          for (let i = 0; i < x.length - 1; i++) {
+          for (let i = 0; i < solutionCopy.length - 1; i++) {
             for (const link of links) {
-              if ((link.a === x[i] && link.b === x[i + 1]) || (link.b === x[i] && link.a === x[i + 1])) {
+              if ((link.a === solutionCopy[i] && link.b === solutionCopy[i + 1]) || (link.b === solutionCopy[i] && link.a === solutionCopy[i + 1])) {
                 link.inSolution = true;
                 break;
               }
             }
           }
           console.log(currentSolution);
-        },
-      });
+        });
+      } else if (currentSelectedKeys.size == 2 && switchInputObjetivo.checked) {
+        assertz("initial([restaurante])", session);
+        assertz("(s(L1,L2):- last(L1,N1),travel(N1,N2,_),append(L1,[N2],L2))", session);
+        let goal = "goal(X):- ";
+        let i = 0;
+        currentSelectedKeys.forEach((key) => {
+          goal += `member(${key},X)${i < currentSelectedKeys.size - 1 ? "," : ""}`;
+          i++;
+        });
+        assertz(`(${goal})`, session);
+        query(`search(${metodoProcuraList.value},Par,S),last(S,LS),length(S,N),N1 is N-1,eval(LS,D), D1 is D + 1.`, session, function (answer) {
+          currentSolution = {
+            path: answer
+              .lookup("LS")
+              .toString()
+              .replace(/[\[\]']+/g, "")
+              .split(","),
+            time: answer.lookup("D1").value,
+            steps: answer.lookup("N1").value,
+            running_time: performance.now() - t0,
+          };
+          let solutionCopy = currentSolution.path.slice();
+          for (const link of links) {
+            link.inSolution = false;
+          }
+          for (let i = 0; i < solutionCopy.length - 1; i++) {
+            for (const link of links) {
+              if ((link.a === solutionCopy[i] && link.b === solutionCopy[i + 1]) || (link.b === solutionCopy[i] && link.a === solutionCopy[i + 1])) {
+                link.inSolution = true;
+                break;
+              }
+            }
+          }
+          console.log(currentSolution);
+        });
+      }
     }
+    setTimeout(() => {
+      procuraButton.disabled = false;
+    }, 250);
   });
 
   canvas.addEventListener("dblclick", async (evt) => {
@@ -115,15 +147,33 @@ function setup() {
           },
         }).then((res) => {
           if (res.isConfirmed) {
-            entidades.forEach((entidade) => {
-              entidade.lucro = 0;
-            });
+            if (metodoProcuraList.firstElementChild.getAttribute("value") != "depthfirst") {
+              metodoProcuraList.prepend(depthfirstOption);
+            }
             for (const link of links) {
               link.inSolution = false;
             }
-            currentSelectedKey = entidade.nome;
-            currentSolution = null;
-            entidades.get(currentSelectedKey).lucro = res.value;
+            if (!switchInputObjetivo.checked) {
+              if (currentSelectedKeys.size > 0) {
+                entidades.get(currentSelectedKeys.values().next().value).lucro = 0;
+                currentSelectedKeys.clear();
+              }
+              currentSelectedKeys.add(entidade.nome);
+              currentSolution = null;
+              entidades.get(entidade.nome).lucro = res.value;
+            } else {
+              if (currentSelectedKeys.size > 1 && !currentSelectedKeys.has(entidade.nome)) {
+                const toBeRemovedKey = currentSelectedKeys.values().next().value;
+                entidades.get(currentSelectedKeys.values().next().value).lucro = 0;
+                currentSelectedKeys.delete(toBeRemovedKey);
+              }
+              currentSelectedKeys.add(entidade.nome);
+              if (currentSelectedKeys.has("cliente5") && depthfirstOption.getAttribute("value") === "depthfirst") {
+                metodoProcuraList.removeChild(depthfirstOption);
+              }
+              currentSolution = null;
+              entidades.get(entidade.nome).lucro = res.value;
+            }
           }
         });
         break;
@@ -161,14 +211,23 @@ function setup() {
     }
   });
 
-  resetButton.addEventListener("click", reset);
-  switchInput.addEventListener("click", () => {});
+  resetButton.addEventListener("click", (evt) => {
+    entidades = startingMap(width, height);
+    reset();
+  });
+
+  switchInputObjetivo.addEventListener("change", (evt) => {
+    labelObjetivo.textContent = !evt.target.checked ? "Objetivo 1" : "Objetivo 2";
+    reset();
+  });
 }
 
 function reset() {
-  entidades = startingMap(width, height);
-  currentSelectedKey = null;
+  currentSelectedKeys.clear();
   currentSolution = null;
+  entidades.forEach((entidade) => {
+    entidade.lucro = 0;
+  });
   for (const link of links) {
     link.inSolution = false;
   }
@@ -176,28 +235,31 @@ function reset() {
 
 function draw() {
   for (const link of links) {
+    ctx.save();
     const a = entidades.get(link.a);
     const b = entidades.get(link.b);
     const mid = a.pos.add(b.pos).mult(0.5);
     const normal = new Vector(-(b.pos.y - a.pos.y), b.pos.x - a.pos.x).normalize().mult(15);
-    ctx.save();
     ctx.beginPath();
     ctx.moveTo(a.pos.x, a.pos.y);
     ctx.lineTo(b.pos.x, b.pos.y);
     link.inSolution ? (ctx.strokeStyle = "#00ff00") : (ctx.strokeStyle = "#ffffff");
     ctx.stroke();
-    ctx.fillText(`${switchInput.checked ? parseFloat(a.pos.distance(b.pos) / 100).toFixed(1) : link.weight}m`, mid.x + normal.x, mid.y + normal.y);
+    ctx.fillText(`${switchInputDistancia.checked ? parseFloat(a.pos.distance(b.pos) / 100).toFixed(1) : link.weight}m`, mid.x + normal.x, mid.y + normal.y);
     ctx.restore();
   }
   for (const entidade of entidades.values()) {
     entidade.show(ctx);
   }
-  const current = entidades.get(currentSelectedKey);
-  if (current) {
+
+  currentSelectedKeys.forEach((selectedKey) => {
+    const encomenda = entidades.get(selectedKey);
     ctx.beginPath();
-    ctx.arc(current.pos.x, current.pos.y, Entidade.size, 0, 2 * Math.PI);
+    currentSolution ? (ctx.strokeStyle = "#00ff00") : (ctx.strokeStyle = "#ffffff");
+    ctx.arc(encomenda.pos.x, encomenda.pos.y, Entidade.size, 0, 2 * Math.PI);
     ctx.stroke();
-  }
+  });
+
   if (currentSolution) {
     ctx.save();
     ctx.font = `${Entidade.size * 0.75}px Consolas`;

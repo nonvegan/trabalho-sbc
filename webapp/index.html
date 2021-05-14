@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <title>Title</title>
+    <title>SBC Entrega de estafetas</title>
 </head>
 
 <body>
     <h1><span>SBC </span>Entrega de estafetas</h1>
-    <div><canvas id="canvas"></canvas></div>
+    <div><canvas></canvas></div>
     <div id="optionsDiv">
         <button id="procuraButton"><span>Procura</button>
         <select id="metodoProcuraList">
@@ -22,11 +22,14 @@
         </select>
         <button id="resetButton"><span>Reset</span> Button</button>
         <label>Distância real</label>
-        <label class="switch"><input id="switchInput" type="checkbox" autocomplete="off" /><span
+        <label class="switch"><input id="switchInputDistancia" type="checkbox" autocomplete="off" /><span
+                class="slider round"></span></label>
+        <label id="labelObjetivo">Objetivo 1</label>
+        <label class="switch"><input id="switchInputObjetivo" type="checkbox" autocomplete="off" /><span
                 class="slider round"></span></label>
     </div>
-
 </body>
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.1/modules/core.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.1/modules/lists.js"></script>

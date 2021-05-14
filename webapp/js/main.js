@@ -1,4 +1,4 @@
-import { assertz, retractall, consult, consultFile, query } from "./intrepertador_prolog.js";
+import { assertz, retractall, consult, consultFile, query } from "./interpretador_prolog.js";
 import { Vector, Entidade } from "./classes.js";
 import { getMousePosElem } from "./helpers.js";
 import { startingMap, links } from "./data.js";
@@ -13,8 +13,8 @@ const labelObjetivo = document.getElementById("labelObjetivo");
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
-const width = 1400;
-const height = 800;
+const width = Math.min(window.innerWidth, window.innerHeight);
+const height = width / 1.6;
 Entidade.size = width / 50;
 
 let entidades = startingMap(width, height);

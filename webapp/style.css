@@ -1,29 +1,3 @@
-    :root {
-        --fuchsia: #f92672;
-        --light-violet: #ae81ff;
-        --bunker: #21252b;
-        --ebony: #282c34;
-        --atomic-tangerine: #FC9867;
-        --dandelion: #FFD866;
-        --feijoa: #A9DC76;
-        --turquoise-blue: #78dce8;
-    }
-
-    .swal2-popup {
-        background-color: #21252b !important;
-        border-radius: 0.3rem !important;
-    }
-
-    .swal2-input {
-        background-color: #282c34 !important;
-        border: 0.3rem solid white !important;
-        border-radius: 0.3rem !important;
-    }
-
-    .swal2-input:hover{
-        border-color: #ae81ff !important;
-    }
-
     html,
     body {
         margin: 0;
@@ -64,7 +38,7 @@
     label {
         font-size: 2rem;
         margin-top: 1.5vh;
-        margin-right: 0vw;;
+        margin-right: 0vw;
         margin-left: 1.5vw;
     }
 
@@ -83,7 +57,7 @@
         font-size: 1.25rem;
     }
 
-    select{
+    select {
         width: 15rem
     }
 
@@ -152,4 +126,19 @@
 
     input:checked+.slider:before {
         transform: translateX(3rem);
+    }
+
+    .swal2-popup {
+        background-color: #21252b !important;
+        border-radius: 0.3rem !important;
+    }
+
+    .swal2-input {
+        background-color: #282c34 !important;
+        border: 0.3rem solid white !important;
+        border-radius: 0.3rem !important;
+    }
+
+    .swal2-input:hover {
+        border-color: #ae81ff !important;
     }

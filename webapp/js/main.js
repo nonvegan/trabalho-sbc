@@ -1,12 +1,13 @@
 import { assertz, retractall, consult, consultFile, query } from "./interpretador_prolog.js";
 import { Vector, Entidade } from "./classes.js";
-import { getMousePosElem } from "./helpers.js";
+import { getMousePosElem, getRandomInt } from "./helpers.js";
 import { startingMap, links } from "./data.js";
 
 const metodoProcuraList = document.getElementById("metodoProcuraList");
 const depthfirstOption = metodoProcuraList.firstElementChild;
-const resetButton = document.getElementById("resetButton");
 const procuraButton = document.getElementById("procuraButton");
+const resetButton = document.getElementById("resetButton");
+const randomButton = document.getElementById("randomButton");
 const switchInputDistancia = document.getElementById("switchInputDistancia");
 const switchInputObjetivo = document.getElementById("switchInputObjetivo");
 const labelObjetivo = document.getElementById("labelObjetivo");
@@ -44,7 +45,8 @@ function setup() {
   consultFile("../prolog/procura/estafeta.pl", session);
 
   procuraButton.addEventListener("click", (evt) => {
-    procuraButton.disabled = true;
+    procuraButton.disabled = randomButton.disabled = true;
+
     const t0 = performance.now();
     if (currentSelectedKeys.size > 0) {
       retractall("initial(_)", session);
@@ -90,6 +92,10 @@ function setup() {
           console.log(currentSolution);
         });
       } else if (currentSelectedKeys.size == 2 && switchInputObjetivo.checked) {
+        let lucro = 0;
+        for (const key of currentSelectedKeys) {
+          lucro += parseInt(entidades.get(key).lucro);
+        }
         assertz("initial([restaurante])", session);
         assertz("(s(L1,L2):- last(L1,N1),travel(N1,N2,_),append(L1,[N2],L2))", session);
         let goal = "goal(X):- ";
@@ -109,6 +115,7 @@ function setup() {
             time: answer.lookup("D1").value,
             steps: answer.lookup("N1").value,
             running_time: performance.now() - t0,
+            profit: lucro,
           };
           let solutionCopy = currentSolution.path.slice();
           for (const link of links) {
@@ -127,7 +134,7 @@ function setup() {
       }
     }
     setTimeout(() => {
-      procuraButton.disabled = false;
+      procuraButton.disabled = randomButton.disabled = false;
     }, 250);
   });
 
@@ -214,6 +221,25 @@ function setup() {
   resetButton.addEventListener("click", (evt) => {
     entidades = startingMap(width, height);
     reset();
+  });
+
+  randomButton.addEventListener("click", (evt) => {
+    if (metodoProcuraList.firstElementChild.getAttribute("value") != "depthfirst") {
+      metodoProcuraList.prepend(depthfirstOption);
+    }
+    reset();
+    const randomBuffer = Array.from(entidades.keys()).slice(1);
+    if (!switchInputObjetivo.checked) {
+      currentSelectedKeys.add(randomBuffer[getRandomInt(0, randomBuffer.length - 1)]);
+    } else {
+      while (currentSelectedKeys.size < 2) {
+        currentSelectedKeys.add(randomBuffer[getRandomInt(0, randomBuffer.length - 1)]);
+      }
+      if (currentSelectedKeys.has("cliente5") && depthfirstOption.getAttribute("value") === "depthfirst") {
+        metodoProcuraList.removeChild(depthfirstOption);
+      }
+    }
+    procuraButton.click();
   });
 
   switchInputObjetivo.addEventListener("change", (evt) => {

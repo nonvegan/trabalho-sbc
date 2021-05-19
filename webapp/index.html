@@ -13,19 +13,22 @@
 <body>
     <h1><span>SBC </span>Entrega de estafetas</h1>
     <div><canvas></canvas></div>
-    <div id="optionsDiv">
+    <div>
         <button id="procuraButton"><span>Procura</button>
         <select id="metodoProcuraList">
             <option value="depthfirst">Depth-first</option>
             <option value="iterativedeepening">Iterative deepening</option>
             <option value="breadthfirst">Breadth-first</option>
         </select>
+        <button id="randomButton"><span>Random</span> Button</button>
         <button id="resetButton"><span>Reset</span> Button</button>
-        <label>Distância real</label>
-        <label class="switch"><input id="switchInputDistancia" type="checkbox" autocomplete="off" /><span
-                class="slider round"></span></label>
+    </div>
+    <div>
         <label id="labelObjetivo">Objetivo 1</label>
         <label class="switch"><input id="switchInputObjetivo" type="checkbox" autocomplete="off" /><span
+                class="slider round"></span></label>
+        <label>Distância real</label>
+        <label class="switch"><input id="switchInputDistancia" type="checkbox" autocomplete="off" /><span
                 class="slider round"></span></label>
     </div>
 </body>

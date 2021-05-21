@@ -145,7 +145,7 @@ Nesta parte foram desenvolvidas as funcionalidades de optimização usando o mé
 * [JavaScript](https://www.javascript.com)
 * [Tau Prolog](http://tau-prolog.org)
 
-## Licensa <a name = "license"></a>
+## Licença <a name = "license"></a>
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
@@ -154,7 +154,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Pedro Magalhães](mailto:pedromagalhaes_2000@hotmail.com)
 * [Álvaro Ferreira](mailto:alvarobahrain@gmail.com)
 * [André Gomes](mailto:andrede@live.com.pt)
-* [Zé Carvalho](mailto:zemmcarvalho@gmail.com)
+* [José Carvalho](mailto:zemmcarvalho@gmail.com)
 
 ## Reconhecimentos <a name = "ack"></a>
 * [Paulo Cortez](http://www3.dsi.uminho.pt/pcortez/Home.html)

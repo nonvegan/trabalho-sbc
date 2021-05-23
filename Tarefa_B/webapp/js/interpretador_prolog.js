@@ -1,4 +1,4 @@
-export { consult, consultFile, query, assertz, retractall };
+export { consult, consultFile, query, queryF, assertz, retractall };
 
 function consult(rule, session) {
   session.consult(
@@ -25,6 +25,16 @@ function query(q, session, callback) {
     success: callback,
     error: (err) => console.log(err),
     fail: () => console.log("fail"),
+    limit: () => console.log("limit exceeded"),
+  });
+}
+
+function queryF(q, session, callback, failcallBack) {
+  session.query(q);
+  session.answer({
+    success: callback,
+    error: (err) => console.log(err),
+    fail: failcallBack,
     limit: () => console.log("limit exceeded"),
   });
 }

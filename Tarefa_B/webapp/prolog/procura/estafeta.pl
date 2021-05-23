@@ -15,3 +15,9 @@ eval([City1,City2|R],DS):-
 	travel(City1,City2,D),
 	eval([City2|R],DR),
 	DS is D+DR.
+
+evalLucro([],0). %eval lucro
+evalLucro([City|R],DS):- 
+	lucro(City,D),
+	evalLucro(R,DR),
+	DS is D+DR.

@@ -132,7 +132,7 @@ Nesta parte foram desenvolvidas as funcionalidades de optimização usando o mé
 * Select the searching mode
 * Click search
 
-![Procura](https://i.imgur.com/S5OWn7U.png)
+![Procura](https://i.imgur.com/A5CepUX.png)
   
 ## Ferramentas <a name = "built"></a>
 * [SWI-Prolog](https://www.swi-prolog.org)

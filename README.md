@@ -13,7 +13,7 @@
 - [Tarefa A - Aconselhamento para compra de uma refeição](#ta)
   - [Parte 1 - Aquisição manual de conhecimento](#ta1)
   - [Parte 2 - Aquisição automática de conhecimento](#ta2)
-  - [Pré-requesitos](#pre1)
+  - [Pré-requisitos](#pre1)
   - [Getting started](#getting1)
     - [Quick-start](#quick1)
     - [Installation](#install1)
@@ -21,12 +21,12 @@
 - [Tarefa B - Aconselhamento de trajeto para entrega de uma refeição](#tb)
   - [Parte 1 - Resolução via Procura ](#tb1)
   - [Parte 2 - Otimização do lucro, tempo ou ambos ](#tb2)
-  - [Pré-requesitos](#pre2)
+  - [Pré-requisitos](#pre2)
   - [Getting started](#getting2)
     - [Quick-start](#quick2)
     - [Usage](#usage2)
 - [Ferramentas](#built)
-- [Licensa](#license)
+- [Licença](#license)
 - [Contactos](#contact)
 - [Reconhecimentos](#ack)
 - [Referências](#refer)
@@ -37,14 +37,13 @@ No âmbito da unidade curricular de Sistemas Baseados em Conhecimento, foi-nos p
 
 
 ## Tarefa A - Aconselhamento para compra de uma refeição <a name = "ta"></a>
-Dentro do conceito de fooddelivery, take away & drive-in, pretende-se que elabore um SBC para aconselhar sobre a escolha e compra de uma refeição(com entrega em casa ou take away). Através de uma interface desenvolvida em python com auxílio do intepretador de Prolog [Pyswip](https://pypi.org/project/pyswip), é possível fazer pesquizas na nossa base de conhecimento Prolog usando o WhatsApp.
+Dentro do conceito de fooddelivery, take away & drive-in, pretende-se elaborar um SBC para aconselhar sobre a escolha e compra de uma refeição(com entrega em casa ou take away). Através de uma interface desenvolvida em python com auxílio do intepretador de Prolog [Pyswip](https://pypi.org/project/pyswip), é possível fazer pesquizas na nossa base de conhecimento Prolog usando o WhatsApp.
 
 ### Parte 1 - Aquisição manual de conhecimento  <a name = "ta1"></a>
-Nesta fase foram usadas técnias de aquisição de conhecimento manual (Pesquiza e intrevistas) para a conceção de [regras de produção manuais](/Tarefa_A/server/prolog/baseconhecimento.pl).
+Nesta fase foram usadas técnicas de aquisição de conhecimento manual (Pesquisa e entrevistas) para a conceção de [regras de produção manuais](/Tarefa_A//server/prolog/baseconhecimento.pl).
 
 ### Parte 2 - Aquisição automática de conhecimento <a name = "ta2"></a>
 Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google Forms](https://www.google.com/forms/about). A respostas foram depois descarregas para o ficheiro [pratos.csv](/Tarefa_A/data_mining/pratos.csv). Foi depois escrita uma [pequena script em R](/Tarefa_A/data_mining/pratos_script.R) que gerou [regras de produção](/Tarefa_A/data_mining/regras.txt) de forma automática, que pudessem ser usadas pelo [Prolog](/Tarefa_A/server/prolog/baseconhecimentoautomatica.pl).
-
 
 ### Pré-requisitos <a name = "pre1"></a>
 * [SWI-Prolog 8.2.4](https://www.swi-prolog.org/download/stable)
@@ -53,7 +52,6 @@ Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google
 * [npm](https://www.npmjs.com/get-npm)
 * [R 4.0](https://cran.r-project.org/mirrors.html)
 * [RStudio](https://www.rstudio.com/products/rstudio/download)
-
 
 ## Getting started <a name = "getting1"></a>
 
@@ -145,7 +143,7 @@ Nesta parte foram desenvolvidas as funcionalidades de optimização usando o mé
 * [JavaScript](https://www.javascript.com)
 * [Tau Prolog](http://tau-prolog.org)
 
-## Licensa <a name = "license"></a>
+## Licença <a name = "license"></a>
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
@@ -154,7 +152,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Pedro Magalhães](mailto:pedromagalhaes_2000@hotmail.com)
 * [Álvaro Ferreira](mailto:alvarobahrain@gmail.com)
 * [André Gomes](mailto:andrede@live.com.pt)
-* [Zé Carvalho](mailto:zemmcarvalho@gmail.com)
+* [José Carvalho](mailto:zemmcarvalho@gmail.com)
 
 ## Reconhecimentos <a name = "ack"></a>
 * [Paulo Cortez](http://www3.dsi.uminho.pt/pcortez/Home.html)

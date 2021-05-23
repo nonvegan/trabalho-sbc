@@ -40,10 +40,10 @@ No âmbito da unidade curricular de Sistemas Baseados em Conhecimento, foi-nos p
 Dentro do conceito de fooddelivery, take away & drive-in, pretende-se que elabore um SBC para aconselhar sobre a escolha e compra de uma refeição(com entrega em casa ou take away). Através de uma interface desenvolvida em python com auxílio do intepretador de Prolog [Pyswip](https://pypi.org/project/pyswip), é possível fazer pesquizas na nossa base de conhecimento Prolog usando o WhatsApp.
 
 ### Parte 1 - Aquisição manual de conhecimento  <a name = "ta1"></a>
-Nesta fase foram usadas técnias de aquisição de conhecimento manual (Pesquiza e intrevistas) para a conceção de [regras de produção manuais](/server/prolog/baseconhecimento.pl).
+Nesta fase foram usadas técnias de aquisição de conhecimento manual (Pesquiza e intrevistas) para a conceção de [regras de produção manuais](/Tarefa_A/server/prolog/baseconhecimento.pl).
 
 ### Parte 2 - Aquisição automática de conhecimento <a name = "ta2"></a>
-Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google Forms](https://www.google.com/forms/about). A respostas foram depois descarregas para o ficheiro [pratos.csv](/data_mining/pratos.csv). Foi depois escrita uma [pequena script em R](/data_mining/pratos_script.R) que gerou [regras de produção](/data_mining/regras.txt) de forma automática, que pudessem ser usadas pelo [Prolog](/server/prolog/baseconhecimentoautomatica.pl).
+Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google Forms](https://www.google.com/forms/about). A respostas foram depois descarregas para o ficheiro [pratos.csv](/Tarefa_A/data_mining/pratos.csv). Foi depois escrita uma [pequena script em R](/Tarefa_A/data_mining/pratos_script.R) que gerou [regras de produção](/Tarefa_A/data_mining/regras.txt) de forma automática, que pudessem ser usadas pelo [Prolog](/Tarefa_A/server/prolog/baseconhecimentoautomatica.pl).
 
 
 ### Pré-requisitos <a name = "pre1"></a>

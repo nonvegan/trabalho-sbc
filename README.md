@@ -37,7 +37,7 @@ No âmbito da unidade curricular de Sistemas Baseados em Conhecimento, foi-nos p
 
 
 ## Tarefa A - Aconselhamento para compra de uma refeição <a name = "ta"></a>
-Dentro do conceito de fooddelivery, take away & drive-in, pretende-se elaborar um SBC para aconselhar sobre a escolha e compra de uma refeição(com entrega em casa ou take away). Através de uma interface desenvolvida em python com auxílio do intepretador de Prolog [Pyswip](https://pypi.org/project/pyswip), é possível fazer pesquizas na nossa base de conhecimento Prolog usando o WhatsApp.
+Dentro do conceito de fooddelivery, take away & drive-in, pretende-se elaborar um SBC para aconselhar sobre a escolha e compra de uma refeição(com entrega em casa ou take away). Através de uma interface desenvolvida em python com auxílio do intepretador de Prolog [Pyswip](https://pypi.org/project/pyswip), é possível fazer pesquisas na nossa base de conhecimento Prolog usando o WhatsApp.
 
 ### Parte 1 - Aquisição manual de conhecimento  <a name = "ta1"></a>
 Nesta fase foram usadas técnicas de aquisição de conhecimento manual (Pesquisa e entrevistas) para a conceção de [regras de produção manuais](/Tarefa_A//server/prolog/baseconhecimento.pl).

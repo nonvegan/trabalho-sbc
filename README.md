@@ -100,7 +100,7 @@ Send a WhatsApp message to +1 415 523 8886 with the code **join disappear-organi
 ![Bot](https://i.imgur.com/uquLinP.png)
 
 ## Tarefa B - Aconselhamento de trajeto para entrega de uma refeição <a name = "tb"></a>
-Desenvolver um SBC para um estafeta que usa uma scooter como meio de transporte que trabalha para um sistema de entrega de um restaurante. O SBC deve aconselhar que encomendas o estafeta deve pegar no restaurante e qual o caminho a seguir para proceder às entregas. Optamos por desenvolver uma webapp com o auxílio do intrepertador Prolog em JavaScript [Tau prolog](http://tau-prolog.org) como interface para o nosso SBC.
+Desenvolver um SBC para um estafeta que usa uma scooter como meio de transporte que trabalha para um sistema de entrega de um restaurante. O SBC deve aconselhar que encomendas o estafeta deve pegar no restaurante e qual o caminho a seguir para proceder às entregas. Optamos por desenvolver uma webapp com o auxílio do interpretador Prolog em JavaScript [Tau prolog](http://tau-prolog.org) como interface para o nosso SBC.
 
 ### Parte 1 - Resolução via Procura <a name = "tb1"></a>
 Nesta parte foram desenvolvidas as funcionalidades de procura para o objetivo 1 (a scooter só pode levar uma encomenda de cada vez) e 2 (a scooter pode levar uma ou duas encomendas de cada vez), podendo o utilizador escolher depth-first, iterative-deepening e breath-first como métodos de procura.

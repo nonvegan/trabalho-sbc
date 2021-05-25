@@ -69,7 +69,7 @@ Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google
 ![Twilio Sandbox](https://i.imgur.com/0tFXC6P.png)
 
 #### Join the Twilio WhatsApp Sandbox
-Send a WhatsApp message to +1 415 523 8886 with the code **join disappear-organized**.
+Send a WhatsApp message to **Your sandbox WhatsApp number** with the correct **Sandbox join code**
 
 ![Join the Twilio WhatsApp Sandbox](https://i.imgur.com/8tKLhgM.png)
 

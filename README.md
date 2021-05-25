@@ -43,7 +43,7 @@ Dentro do conceito de fooddelivery, take away & drive-in, pretende-se elaborar u
 Nesta fase foram usadas técnicas de aquisição de conhecimento manual (Pesquisa e entrevistas) para a conceção de [regras de produção manuais](/Tarefa_A//server/prolog/baseconhecimento.pl).
 
 ### Parte 2 - Aquisição automática de conhecimento <a name = "ta2"></a>
-Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google Forms](https://www.google.com/forms/about). A respostas foram depois descarregas para o ficheiro [pratos.csv](/Tarefa_A/data_mining/pratos.csv). Foi depois escrita uma [pequena script em R](/Tarefa_A/data_mining/pratos_script.R) que gerou [regras de produção](/Tarefa_A/data_mining/regras.txt) de forma automática, que pudessem ser usadas pelo [Prolog](/Tarefa_A/server/prolog/baseconhecimentoautomatica.pl).
+Nesta segunda fase foi desenvolvido e partilhado um formulário usando o [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSeNAQaEAmYyQwujrFkVR1biIBEo4PDDMI2MmAVUZw43gGIujA/viewform). A respostas foram depois descarregas para o ficheiro [pratos.csv](/Tarefa_A/data_mining/pratos.csv). Foi depois escrita uma [pequena script em R](/Tarefa_A/data_mining/pratos_script.R) que gerou [regras de produção](/Tarefa_A/data_mining/regras.txt) de forma automática, que pudessem ser usadas pelo [Prolog](/Tarefa_A/server/prolog/baseconhecimentoautomatica.pl).
 
 ### Pré-requisitos <a name = "pre1"></a>
 * [SWI-Prolog 8.2.4](https://www.swi-prolog.org/download/stable)
